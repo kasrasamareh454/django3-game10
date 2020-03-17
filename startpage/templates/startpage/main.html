@@ -51,7 +51,9 @@ body {
 <body>
 
 <div class="header">
-  <h1>{{user.username}}</h1>
+  <h1></h1>
+  <br>
+  <a href="{%url 'Qquotation' %}" class="btn btn-primary">برای قیمت دادن کلیک کنید</a>
   <p>
   </p>
 </div>
@@ -75,14 +77,14 @@ body {
   {% endfor %}
   </div>
   <div class="column" align='center' style="background-color: orange ;">
-    <h5>موجودی</h5>
+    <h5>💼کیف پول</h5>
     <ul>
       <li>
-      {{ mojodi }}🤑
+      موجودی : {{ mojodi }}🤑
       <br>
-      سهم مارکت :%{{ sahmM }}
+      سهم مارکت : %{{ sahmM }}
       <br>
-      سهم شرکت :%{{ sahmC }}
+      سهم شرکت : %{{ sahmC }}
     </li>
   </ul>
   </div>

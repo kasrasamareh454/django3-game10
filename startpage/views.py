@@ -149,7 +149,7 @@ def extra(request) :
                 pickle.dump(mojodi , open("{}.txt".format(request.user) , "wb"))
                 sahmM = cost.sahmmarket
                 pickle.dump(sahmM , open("sahmM{}.txt".format(request.user) , "wb"))
-                #cost.delete()
+                cost.delete()
                 return redirect('mainpage')
                 #sahmC = cost.sahmcompany
                 #pickle.dump(sahmC , open("sahmC{}.txt".format(user) , "wb"))
@@ -176,7 +176,7 @@ def extraC(request) :
                 pickle.dump(mojodi , open("{}.txt".format(request.user) , "wb"))
                 sahmC = costC.sahmcompany
                 pickle.dump(sahmC , open("sahmC{}.txt".format(request.user) , "wb"))
-                #costC.delete()
+                costC.delete()
                 return redirect('mainpage')
         else :
             continue
@@ -424,11 +424,6 @@ def quotationforedit(request , quotation_pk) :
         except  ValueError:
 
             return render(request, 'startpage/quotationforedit.html', {'quotation': quotation, 'form':form, 'error':'🤯داده وارد شده صحیح نمی باشد'})
-
-
-
-
-
 
 
 

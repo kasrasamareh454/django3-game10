@@ -37,6 +37,8 @@ urlpatterns = [
 
     path('main/extraC', views.extraC , name='extraC'),
 
+    #path('new_s/', views.newsnews , name='newsnews'),
+
     path('authn/signup/' , views.signupuser , name='signupuser'),
 
     path('authn/logout/' , views.logoutuser , name='logoutuser'),

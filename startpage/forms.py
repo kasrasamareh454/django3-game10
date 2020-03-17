@@ -12,3 +12,8 @@ class Cform(ModelForm) :
     class Meta :
         model = costomer
         fields = ['Cbuy']
+
+# class Nform(ModelForm) :
+#     class Meta :
+#         model = News
+#         fields = ['newnews']

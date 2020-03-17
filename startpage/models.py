@@ -80,3 +80,9 @@ class Balances(models.Model) :
     sahmC = models.IntegerField(default=0)
     
     user = models.ForeignKey(User , on_delete=models.CASCADE)
+
+# class News(models.Model) :
+
+#     newnews = models.TextField(blank=True)
+    
+#     user = models.ForeignKey(User , on_delete=models.CASCADE)
