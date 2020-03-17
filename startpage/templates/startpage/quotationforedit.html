@@ -1,0 +1,33 @@
+
+<html lang="fa">
+    <head>
+    <meta charset="UTF-8">
+    </head>
+    {% extends 'startpage/base.html' %}
+    {% block content %}
+    <body>
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        <!--<form method="POST">
+            <div class="form-gruop">
+            {% csrf_token %}
+                <label for="Qforbuy">Title</label>
+                <input type="text" name="Qforbuy" class="form-control" id="Qforbuy" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>-->
+
+        <form method="POST">
+            {% csrf_token %}
+            <!--<div class="form-group">
+                <label for="Qforbuy">مقدار خرید سهم</label>
+                <input type="text" name="Qforbuy" class="form-control" id="Qforbuy" value="{{ quotation.Qforbuy }}" required>
+            </div>-->
+            {{ form.as_p }}
+            <div align='center'><button type="submit" class="btn btn-primary btn-lg btn-block">ذخیره</button></div>
+        </form>
+    {% endblock %}
+    </html>

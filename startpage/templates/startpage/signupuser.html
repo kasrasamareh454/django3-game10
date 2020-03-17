@@ -1,0 +1,47 @@
+
+<html lang="fa">
+   
+    <head>
+    
+        <meta charset="UTF-8">
+
+    </head>
+
+    {% extends 'startpage/base.html' %}
+
+    {% block content %}
+    <body>
+
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-5">
+                {% if error %}
+                    <div class="alert alert-danger" role="alert" align='center'>
+                        {{ error }}
+                    </div>
+                {% endif %}
+    <form method="POST">
+
+        {% csrf_token %}
+        <div class="form-group"  align='right'>
+            <label for="username">نام کاربری</label>
+            <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
+            <small id="usernameHelp" class="form-text text-muted">😁نام کاربری شما باید منحصر به فرد باشد</small>
+        </div>
+        <div class="form-group"  align='right'>
+            <label for="password1">کلمه عبور</label>
+            <input type="password" name="password1" class="form-control" id="password1">
+        </div>
+        <div class="form-group"  align='right'>
+            <label for="password2">کلمه عبور</label>
+            <input type="password" name="password2" class="form-control" id="password2">
+        </div>
+
+        <div align='right'><button type="submit" class="btn btn-primary btn-lg btn-block">ثبت نام</button></div>
+
+    </form>
+
+    </body>
+
+    {% endblock %}
+</html>
