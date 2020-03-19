@@ -81,8 +81,15 @@ class Balances(models.Model) :
     
     user = models.ForeignKey(User , on_delete=models.CASCADE)
 
-# class News(models.Model) :
+class News(models.Model) :
 
-#     newnews = models.TextField(blank=True)
+    newnews = models.TextField(blank=True)
     
-#     user = models.ForeignKey(User , on_delete=models.CASCADE)
+    user = models.ForeignKey(User , on_delete=models.CASCADE)
+
+    important = models.BooleanField(default=False)
+
+class Scots(models.Model) :
+    name = models.CharField(max_length=50 , blank=True)
+    scot = models.BigIntegerField(blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

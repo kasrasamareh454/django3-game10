@@ -1,0 +1,18 @@
+
+{% extends 'startpage/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+{% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div align='center'><button type="submit" class="btn btn-primary btn-lg btn-block">پرداخت</button></div>
+    </form>
+
+{% endblock %}

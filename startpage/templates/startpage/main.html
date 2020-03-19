@@ -22,7 +22,7 @@ body {
 .header {
   background-color: #f1f1f1;
   padding: 20px;
-  text-align: center;
+  text-align: right;
 }
 
 /* Create three equal columns that floats next to each other */
@@ -51,9 +51,13 @@ body {
 <body>
 
 <div class="header">
-  <h1></h1>
-  <br>
-  <a href="{%url 'Qquotation' %}" class="btn btn-primary">برای قیمت دادن کلیک کنید</a>
+  {% for new in news %}
+    <p>
+      <a href="{% url 'newsnews' new.id %}" class="list-group-item list-group-item-action{% if new.important %} list-group-item-danger{% endif %}">
+        {{new.newnews}} : {{new.user}}
+      </a>
+    </p>
+  {% endfor %}
   <p>
   </p>
 </div>
@@ -68,7 +72,7 @@ body {
         نام مارکت یا شرکت : {{ quotation.Qname }}<br>
         قیمت اعلام شده : {{ quotation.Qcost }}<br>
         میزان سهم موجود : {{ quotation.Qquota }}<br>
-        {{ quotation.user }}
+        {{ quotation.user }}<br>
       </a>
         <!--<a class="btn btn-primary" href="{%url 'quotationforedit' quotation.id %}" role="button">خرید</a>-->
       </li>
@@ -85,6 +89,16 @@ body {
       سهم مارکت : %{{ sahmM }}
       <br>
       سهم شرکت : %{{ sahmC }}
+      <br>
+      سهم خریداری شده دلار : {{sahm_khD}}
+      <br>
+      سهم خریداری شده یورو : {{sahm_khE}}
+      <br>
+      سهم خریداری شده پوند : {{sahm_khP}}
+      <br>
+      سهم خریداری شده سکه : {{sahm_khS}}
+      <br>
+      سهم خریداری شده طلا : {{sahm_khT}}
     </li>
   </ul>
   </div>

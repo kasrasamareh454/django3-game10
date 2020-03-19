@@ -29,9 +29,7 @@
             <!--<li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>-->
-            <li class="nav-item">
-              <a class="nav-link" href="#">about</a>
-            </li>
+            
             <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
@@ -43,13 +41,23 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>-->
+            
             {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'createnews' %}"><div style="color: white;">خبر گذاری</div></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'Qquotation' %} "><div style="color: white;">قیمت گذاری</div></a>
+            </li>
+            
             <li class="nav-item">
               <form action="{%url 'logoutuser' %}" method="POST">
                 {% csrf_token %}
                 <button type="submit" class="btn" style="background-color: rgb(250, 92, 0);"><div style="color: rgb(255, 255, 255);">خروج</div></button>
               </form>
             </li>
+            
+            
             {% else %}
             <li class="nav-item">
               <a href="{%url 'signupuser' %}" class="btn" style="background-color: rgb(250, 92, 0);"><div style="color: rgb(255, 255, 255);">ثبت نام</div></a>

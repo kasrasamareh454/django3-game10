@@ -37,7 +37,11 @@ urlpatterns = [
 
     path('main/extraC', views.extraC , name='extraC'),
 
-    #path('new_s/', views.newsnews , name='newsnews'),
+    path('new_s/<int:news_pk>', views.newsnews , name='newsnews'),
+
+    path('createnews/', views.createnews , name='createnews'),
+
+    path('main/scot/' , views.scotpage , name='scotpage'),
 
     path('authn/signup/' , views.signupuser , name='signupuser'),
 

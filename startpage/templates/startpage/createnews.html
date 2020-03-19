@@ -1,0 +1,35 @@
+
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+        {% extends 'startpage/base.html' %}
+            {% block content %}
+                <body>
+                    <!--<div class="row justify-content-center mt-5">
+                        <div class="col-md-5">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="form-group" align ='right'>
+                                    <label for="title">🌡️خبر خود را وارد کنید🌡️</label>
+                                    <input type="text" name="{{newnews}}" class="form-control" id="{{newnews}}" required>
+                                </div>
+                                <div align='center'><button type="submit" class="btn btn-primary btn-lg btn-block">ذخیره</button></div>
+                            </form>
+                        </div>
+                    </div>-->
+<h2>{{ error }}</h2>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Create</button>
+
+</form>
+
+                </body>
+            {% endblock %}
+</html>
